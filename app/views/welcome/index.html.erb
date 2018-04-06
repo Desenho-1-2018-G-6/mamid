@@ -1,0 +1,15 @@
+<div class="main-container">
+<h1 class="main-title" >Mamid</h1>
+
+<div class="form-container">
+  <form> 
+    <input type="email" class="form-control form-input" placeholder="Nome de usuário ou e-mail"></input>
+    <input type="password" class="form-control form-input" placeholder="Senha"></input>
+
+    <div class="button-container">
+      <%= link_to 'Login', new_user_path, type:"button", class: "btn btn-primary" %>
+      <%= link_to 'Registro', new_user_path, type:"button", class: "btn btn-default" %>
+    </div>
+  </form>
+</div>
+</div>
