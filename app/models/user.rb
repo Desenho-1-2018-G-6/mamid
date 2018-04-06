@@ -7,4 +7,6 @@ class User < ApplicationRecord
     validates :gender, presence: true
     validates :phone, presence: true
 
+    has_secure_password
+
 end
