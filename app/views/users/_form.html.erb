@@ -15,39 +15,39 @@
 
 <div class="name-container">
   <div class="field">
-    <%= f.text_field :first_name, placeholder: "Primeiro nome", class: "register-input" %>
+    <%= f.text_field :first_name, placeholder: "Primeiro nome", class: "register-input form-control form-input" %>
   </div>
   <div class="field">
-    <%= f.text_field :last_name, placeholder: "Último nome", class: "register-input" %>
+    <%= f.text_field :last_name, placeholder: "Último nome", class: "register-input form-control form-input" %>
   </div>
 </div>
 
   <div class="field">
-    <%= f.text_field :email, placeholder: "E-mail" %>
+    <%= f.text_field :email, placeholder: "E-mail", class: "form-control form-input" %>
   </div>
 
   <div class="field">
-    <%= f.text_field :email_confirmation, placeholder: "Confirme o E-mail" %>
+    <%= f.text_field :email_confirmation, placeholder: "Confirme o E-mail", class: "form-control form-input" %>
   </div>
 
   <div class="field">
-    <%= f.text_field :password, placeholder: "Senha" %>
+    <%= f.text_field :password, placeholder: "Senha", class: "form-control form-input" %>
   </div>
 
   <div class="field">
-    <%= f.text_field :cpf, placeholder: "CPF" %>
+    <%= f.text_field :cpf, placeholder: "CPF", class: "form-control form-input" %>
   </div>
 
   <div class="field">
-    <%= f.date_select :birth_date, placeholder: "Data de nascimento" %>
+    <%= f.date_select :birth_date, start_year: (Date.today.year-90), end_year: Date.today.year, placeholder: "Data de nascimento", class: "form-control form-input" %>
   </div>
 
   <div class="field">
-    <%= f.text_field :gender, placeholder: "Gênero" %>
+    <%= f.text_field :gender, placeholder: "Gênero", class: "form-control form-input" %>
   </div>
 
   <div class="field">
-    <%= f.number_field :phone, placeholder: "Telefone" %>
+    <%= f.number_field :phone, placeholder: "Telefone", class: "form-control form-input" %>
   </div>
 
   <div class="actions register-button-container">

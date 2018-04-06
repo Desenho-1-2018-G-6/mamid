@@ -1,28 +1,17 @@
 <% @title = "Login" %>
-    <p class="login-box-msg">Start your session</p>
 
-  <div class="form-group has-feedback">
+<div class="main-container">
+<h1 class="main-title" >Mamid</h1>
+
+<div class="form-container">
   <%= form_for(:session, url: login_path) do |f| %>
-         <%= f.email_field :email, class:  'form-control', placeholder: 'Email', autofocus: true %>
-         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-       </div>
-       <div class="form-group has-feedback">
-         <%= f.password_field :password, class: 'form-control', placeholder:'Password' %>
-         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-       </div>
-       <div class="row">
-         <div class="col-md-8">
-         </div>
-         <div class="col-md-4">
-           <%= f.submit 'Enter', class: 'btn btn-primary btn-block btn-flat' %>
-         </div>
-       </div>
-     <% end %>
-     <%= link_to 'Register yourself', new_user_path, class: "text-center" %>
-   </div>
- </div>
- </div>
-    <div class="col-md-3">
+    <%= f.email_field :email, type:"email", class:"form-control form-input", placeholder:"Nome de usuário ou e-mail", autofocus: true %>
+    <%= f.password_field :password, type:"password", class:"form-control form-input", placeholder:"Senha" %>
+
+    <div class="button-container">
+      <%= f.submit 'Login', class: "btn btn-primary" %>
+      <%= link_to 'Registro', new_user_path, type:"button", class: "btn btn-default" %>
     </div>
-  </div>
-</section>
+  <% end %>
+</div>
+</div>
