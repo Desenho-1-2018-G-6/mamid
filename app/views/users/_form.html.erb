@@ -1,0 +1,58 @@
+<div class="register-wrapper">
+<div class="register-container">
+<%= form_for(user, :html => { :class => 'register-form-container' }) do |f| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="name-container">
+  <div class="field">
+    <%= f.text_field :first_name, placeholder: "Primeiro nome", class: "register-input form-control form-input" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :last_name, placeholder: "Último nome", class: "register-input form-control form-input" %>
+  </div>
+</div>
+
+  <div class="field">
+    <%= f.text_field :email, placeholder: "E-mail", class: "form-control form-input" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :email_confirmation, placeholder: "Confirme o E-mail", class: "form-control form-input" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :password, placeholder: "Senha", class: "form-control form-input" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :cpf, placeholder: "CPF", class: "form-control form-input" %>
+  </div>
+
+  <div class="field">
+    <%= f.date_select :birth_date, start_year: (Date.today.year-90), end_year: Date.today.year, placeholder: "Data de nascimento", class: "form-control form-input" %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :gender, placeholder: "Gênero", class: "form-control form-input" %>
+  </div>
+
+  <div class="field">
+    <%= f.number_field :phone, placeholder: "Telefone", class: "form-control form-input" %>
+  </div>
+
+  <div class="actions register-button-container">
+    <%= f.submit 'Criar conta', class: "btn btn-primary"%>
+  </div>
+<% end %>
+</div>
+</div>

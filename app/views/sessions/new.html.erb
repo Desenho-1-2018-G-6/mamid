@@ -1,0 +1,17 @@
+<% @title = "Login" %>
+
+<div class="main-container">
+<h1 class="main-title" >Mamid</h1>
+
+<div class="form-container">
+  <%= form_for(:session, url: login_path) do |f| %>
+    <%= f.email_field :email, type:"email", class:"form-control form-input", placeholder:"Nome de usuário ou e-mail", autofocus: true %>
+    <%= f.password_field :password, type:"password", class:"form-control form-input", placeholder:"Senha" %>
+
+    <div class="button-container">
+      <%= f.submit 'Login', class: "btn btn-primary" %>
+      <%= link_to 'Registro', new_user_path, type:"button", class: "btn btn-default" %>
+    </div>
+  <% end %>
+</div>
+</div>
