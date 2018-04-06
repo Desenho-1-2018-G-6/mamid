@@ -1,4 +1,6 @@
-<%= form_for(user) do |f| %>
+<div class="register-wrapper">
+<div class="register-container">
+<%= form_for(user, :html => { :class => 'register-form-container' }) do |f| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -11,43 +13,37 @@
     </div>
   <% end %>
 
+<div class="name-container">
   <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, placeholder: "Primeiro nome", class: "register-input" %>
   </div>
-
-
   <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, placeholder: "Último nome", class: "register-input" %>
   </div>
-
+</div>
   <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, placeholder: "E-mail" %>
   </div>
 
   <div class="field">
-    <%= f.label :cpf %>
-    <%= f.text_field :cpf %>
+    <%= f.text_field :cpf, placeholder: "CPF" %>
   </div>
 
   <div class="field">
-    <%= f.label :birth_date %>
-    <%= f.date_select :birth_date %>
+    <%= f.date_select :birth_date, placeholder: "Data de nascimento" %>
   </div>
 
   <div class="field">
-    <%= f.label :gender %>
-    <%= f.text_field :gender %>
+    <%= f.text_field :gender, placeholder: "Gênero" %>
   </div>
 
   <div class="field">
-    <%= f.label :phone %>
-    <%= f.number_field :phone %>
+    <%= f.number_field :phone, placeholder: "Telefone" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions register-button-container">
+    <%= f.submit 'Criar conta', class: "btn btn-primary"%>
   </div>
 <% end %>
+</div>
+</div>
