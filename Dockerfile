@@ -9,7 +9,6 @@ WORKDIR /ecommerce-backend
 COPY Gemfile /ecommerce-backend/Gemfile
 COPY Gemfile.lock /ecommerce-backend/Gemfile.lock
 
-RUN bundle install
 COPY entrypoint.sh /
 RUN ["chmod", "+x", "/entrypoint.sh"]
 ENTRYPOINT [ "/entrypoint.sh" ]

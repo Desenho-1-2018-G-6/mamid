@@ -7,6 +7,7 @@ pidfiles="tmp/pids/*.*"
 rm -rf $pidfiles
 echo "PID folder cleaned!"
 
+bundle install
 
 echo ">>>>> DATABASE VERIFICATION <<<<<"
 if bundle exec rake db:exists; then
