@@ -1,0 +1,44 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #bdc3c7;
+    border: white 1px solid;
+    border-radius: 10px;
+    height: 170px;
+    width: 50%;
+    max-width: 400px;
+    >form {
+        >input {
+            margin-top: 8px;
+        }
+    }
+}
+
+.button-container {
+    text-align: center;
+    margin: 5px;
+    >a {
+        margin: 10px 10px 0 10px;
+    }
+}
+
+.btn:visited {
+    color: black;
+}

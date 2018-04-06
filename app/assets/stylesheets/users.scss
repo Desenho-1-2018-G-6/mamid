@@ -1,0 +1,49 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.register-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #bdc3c7;
+    border: white 1px solid;
+    border-radius: 10px;
+    width: 50%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.register-form-container {
+    width: 80%;
+    >div {
+        >input {
+            width: 100%;
+        }
+    }
+}
+
+.name-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.register-input {
+    width: 100%;
+}
+
+.actions {
+    text-align: center;
+}
+
+.register-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
