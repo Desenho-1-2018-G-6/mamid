@@ -2,7 +2,7 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @user.name %>
+  <%= @user.first_name %>
 </p>
 
 <p>
@@ -29,6 +29,8 @@
   <strong>Phone:</strong>
   <%= @user.phone %>
 </p>
+
+<%= link_to 'Logout', logout_path %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
