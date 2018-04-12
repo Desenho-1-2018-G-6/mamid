@@ -1,7 +1,7 @@
 <% @title = "Login" %>
 
 <div class="main-container">
-<h1 class="main-title" >Mamid</h1>
+<h1 class="<%=css_module("login","main-title") %>" >Mamid</h1>
 
 <div class="form-container">
   <%= form_for(:session, url: login_path) do |f| %>
