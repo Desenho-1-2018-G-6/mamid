@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'welcome/index'
-  # root 'welcome#index'
-
+  # comentar o root welcome depois
+  root 'welcome#index'
   resources :products
   resources :users
   root 'sessions#new'
