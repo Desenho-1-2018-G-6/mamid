@@ -1,5 +1,9 @@
 <div class="<%=css_module("users","main-container") %>">
+
+<h1 class="<%=css_module("users","main-title") %>" >Mamid</h1>
+
 <div class="<%=css_module("users","register-container") %>">
+<%= image_tag("little-guy.jpg", class: css_module("users","form-image")) %>
 <%= form_for(user, :html => { :class => css_module("users",'form-container') }) do |f| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
@@ -39,7 +43,7 @@
   </div>
 
   <div class="field">
-    <%= f.date_select :birth_date, start_year: (Date.today.year-90), end_year: Date.today.year, placeholder: "Data de nascimento", class: "form-control form-input" %>
+    <%= f.date_select :birth_date, start_year: (Date.today.year-90), end_year: Date.today.year %>
   </div>
 
   <div class="field">

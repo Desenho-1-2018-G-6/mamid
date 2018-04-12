@@ -6,6 +6,25 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
+        background-image: url('background.jpg');
+        height: 90vh;
+        width: 100vw;
+        max-width: 100%;
+    }
+
+    .main-title {
+        display: flex;
+        color: #E4E4E4;
+        font-size: 50px;
+        margin-top: 0px;
+        margin-bottom: 60px;
+    }
+
+    .form-image {
+        width: 85px;
+        position: absolute;
+        top: 77px;
     }
 
     .register-container {
@@ -13,12 +32,11 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        background-color: #bdc3c7;
-        border: white 1px solid;
+        background-color: white;
         border-radius: 10px;
         width: 50%;
         max-width: 450px;
-        min-width: 320px;
+        min-width: 250px;
         padding: 20px;
     }
 
