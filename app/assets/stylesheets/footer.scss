@@ -3,8 +3,9 @@
         position: absolute;
         right: 0;
         bottom: 0;
-        height: 5vw;
+        height: 80px;
         width: 100vw;
+        max-width: 100%;
         background-color: #555A5D;
         display: flex;
         flex-direction: column;
@@ -14,6 +15,10 @@
         >p {
             margin: 1px;
             color: white;
+            font-size: 1em;
+            @media only screen and (max-width:530px) {
+                font-size: 0.8em;
+            }
         }
     }
 }
