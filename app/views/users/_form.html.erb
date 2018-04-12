@@ -1,6 +1,6 @@
-<div class="register-wrapper">
-<div class="register-container">
-<%= form_for(user, :html => { :class => 'register-form-container' }) do |f| %>
+<div class="<%=css_module("users","main-container") %>">
+<div class="<%=css_module("users","register-container") %>">
+<%= form_for(user, :html => { :class => css_module("users",'form-container') }) do |f| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -13,12 +13,12 @@
     </div>
   <% end %>
 
-<div class="name-container">
+<div class="<%=css_module("users","name-container") %>">
   <div class="field">
-    <%= f.text_field :first_name, placeholder: "Primeiro nome", class: "register-input form-control form-input" %>
+    <%= f.text_field :first_name, placeholder: "Primeiro nome", class: css_module("users","register-input") + " form-control form-input" %>
   </div>
   <div class="field">
-    <%= f.text_field :last_name, placeholder: "Último nome", class: "register-input form-control form-input" %>
+    <%= f.text_field :last_name, placeholder: "Último nome", class: css_module("users","register-input") + " register-input form-control form-input" %>
   </div>
 </div>
 
@@ -50,7 +50,7 @@
     <%= f.number_field :phone, placeholder: "Telefone", class: "form-control form-input" %>
   </div>
 
-  <div class="actions register-button-container">
+  <div class= css_modules("users","button-container")>
     <%= f.submit 'Criar conta', class: "btn btn-primary"%>
   </div>
 <% end %>
