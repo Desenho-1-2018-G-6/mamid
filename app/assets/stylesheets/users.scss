@@ -5,7 +5,6 @@
     .main-container {
         display: flex;
         align-items: center;
-        justify-content: center;
         flex-direction: column;
         background-image: url('background.jpg');
         height: 90vh;
@@ -17,14 +16,14 @@
         display: flex;
         color: #E4E4E4;
         font-size: 50px;
-        margin-top: 0px;
+        margin-top: 45px;
         margin-bottom: 60px;
     }
 
     .form-image {
         width: 85px;
         position: absolute;
-        top: 77px;
+        top: 92px;
     }
 
     .register-container {
@@ -36,8 +35,12 @@
         border-radius: 10px;
         width: 50%;
         max-width: 450px;
-        min-width: 250px;
+        min-width: 300px;
         padding: 20px;
+        @media screen and (max-width:530px) {
+            width: 90%;
+        }
+
     }
 
     .form-container {
