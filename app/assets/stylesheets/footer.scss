@@ -1,0 +1,19 @@
+:module(footer){
+    .main {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 5vw;
+        width: 100vw;
+        background-color: #555A5D;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: white 1px solid;
+        >p {
+            margin: 1px;
+            color: white;
+        }
+    }
+}
