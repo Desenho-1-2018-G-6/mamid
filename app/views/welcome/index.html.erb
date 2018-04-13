@@ -1,0 +1,15 @@
+<div class="main-container">
+  <h1 class="main-title" >Mamid</h1>
+
+  <h2>Welcome to Mamid!</h2>
+
+  <%= link_to 'New Product', new_product_path %>
+
+  <br>
+
+  <div class="field">
+    <% @products.each do |product_show| %>
+      <%= link_to product_show.name, product_show %>
+    <% end %>
+  </div>
+</div>
