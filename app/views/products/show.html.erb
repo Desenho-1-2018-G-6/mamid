@@ -7,19 +7,22 @@
     </div>
 
     <div class="<%=css_module("products","product-info") %>">
-      <h1>Name</h1>
-      <%= @product.name %>
+      <div class="<%=css_module("products","info-container") %>">
+        <h1>Name</h1>
+        <%= @product.name %>
 
-      <h2>Price</h2>
-      <%= @product.price %>
+        <h2>Price</h2>
+        <%= @product.price %>
 
-      <h2>Stock</h2>
-      <%= @product.stock %>
+        <h2>Stock</h2>
+        <%= @product.stock %>
+      </div>
 
       <button type="button" class="btn btn-success btn-lg btn-block">Buy</button>
     </div>
   </div>
 
-  <h1>Description</h1>
-  <%= @product.description %>
+  <h1>Product Description</h1>
+  <%= @product.description.html_safe %>
+
 </div>
