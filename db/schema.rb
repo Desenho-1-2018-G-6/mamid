@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20180406052755) do
     t.string   "cpf"
     t.date     "birth_date"
     t.string   "gender"
-    t.string  "phone"
+    t.string   "phone"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"

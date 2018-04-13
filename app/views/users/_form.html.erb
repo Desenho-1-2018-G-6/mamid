@@ -1,6 +1,10 @@
-<div class="register-wrapper">
-<div class="register-container">
-<%= form_for(user, :html => { :class => 'register-form-container' }) do |f| %>
+<div class="<%=css_module("users","main-container") %>">
+
+<h1 class="<%=css_module("users","main-title") %>" >Mamid</h1>
+
+<div class="<%=css_module("users","register-container") %>">
+<%= image_tag("little-guy.jpg", class: css_module("users","form-image")) %>
+<%= form_for(user, :html => { :class => css_module("users",'form-container') }) do |f| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -13,12 +17,12 @@
     </div>
   <% end %>
 
-<div class="name-container">
+<div class="<%=css_module("users","name-container") %>">
   <div class="field">
-    <%= f.text_field :first_name, placeholder: "Primeiro nome", class: "register-input form-control form-input" %>
+    <%= f.text_field :first_name, placeholder: "Primeiro nome", class: css_module("users","register-input") + " form-control form-input" %>
   </div>
   <div class="field">
-    <%= f.text_field :last_name, placeholder: "Último nome", class: "register-input form-control form-input" %>
+    <%= f.text_field :last_name, placeholder: "Último nome", class: css_module("users","register-input") + " register-input form-control form-input" %>
   </div>
 </div>
 
@@ -31,7 +35,7 @@
   </div>
 
   <div class="field">
-    <%= f.text_field :password, placeholder: "Senha", class: "form-control form-input" %>
+    <%= f.text_field :password, placeholder: "Senha", type: "password", class: "form-control form-input" %>
   </div>
 
   <div class="field">
@@ -39,7 +43,7 @@
   </div>
 
   <div class="field">
-    <%= f.date_select :birth_date, start_year: (Date.today.year-90), end_year: Date.today.year, placeholder: "Data de nascimento", class: "form-control form-input" %>
+    <%= f.date_select :birth_date, start_year: (Date.today.year-90), end_year: Date.today.year %>
   </div>
 
   <div class="field">
@@ -47,10 +51,10 @@
   </div>
 
   <div class="field">
-    <%= f.number_field :phone, placeholder: "Telefone", class: "form-control form-input" %>
+    <%= f.text_field :phone, placeholder: "Telefone", class: "form-control form-input" %>
   </div>
 
-  <div class="actions register-button-container">
+  <div class= css_modules("users","button-container")>
     <%= f.submit 'Criar conta', class: "btn btn-primary"%>
   </div>
 <% end %>
