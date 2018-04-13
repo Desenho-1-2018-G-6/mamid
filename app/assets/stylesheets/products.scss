@@ -1,3 +1,32 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+:module(products){
+  .main-container {
+    display: block;
+    padding: 0px 50px 0px 50px;
+  }
+
+  .shopping-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .image-div {
+    width: 50vw;
+  }
+
+  .form-image {
+    width: 500px;
+  }
+
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    padding: 0px 20px 40px 20px;
+  }
+
+
+}

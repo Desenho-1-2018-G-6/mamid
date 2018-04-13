@@ -1,33 +1,25 @@
-<div style="display: block;">
-  <div style="display: flex;">
-    <img src="http://alanfal-group.com/wp-content/uploads/layerslider/Carousel-demo/computer-300x169.png" alt="PC" style="width: 400px;">
+<%= link_to 'Edit', edit_product_path(@product) %>
 
-    <div style="display: block;">
-      <p>
-        <h1>Name</h1>
-        <%= @product.name %>
-      </p>
+<div class="<%=css_module("products","main-container") %>">
+  <div class="<%=css_module("products","shopping-container") %>">
+    <div class="<%=css_module("products","image-div") %>">
+      <img src="http://alanfal-group.com/wp-content/uploads/layerslider/Carousel-demo/computer-300x169.png" alt="PC" class="<%=css_module("products","form-image") %>">
+    </div>
 
-      <p>
-        <h2>Price</h2>
-        <%= @product.price %>
-      </p>
+    <div class="<%=css_module("products","product-info") %>">
+      <h1>Name</h1>
+      <%= @product.name %>
 
-      <p>
-        <h2>Stock</h2>
-        <%= @product.stock %>
-      </p>
+      <h2>Price</h2>
+      <%= @product.price %>
+
+      <h2>Stock</h2>
+      <%= @product.stock %>
 
       <button type="button" class="btn btn-success btn-lg btn-block">Buy</button>
-
     </div>
   </div>
-</div>
 
-<p>
   <h1>Description</h1>
   <%= @product.description %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+</div>
