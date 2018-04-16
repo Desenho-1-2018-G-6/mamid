@@ -1,5 +1,9 @@
 :module(welcome){
     .main-container {
         min-height: 90vh;
+        background-image: url('main-bg2.jpg');
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
 }
