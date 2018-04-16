@@ -1,6 +1,6 @@
-<h1>Editing Product</h1>
+<div class="<%=css_module("products","main-container") %>">
 
-<%= render 'form', product: @product %>
+  <h1>Editing Product</h1>
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+  <%= render 'form', product: @product %>
+</div>
