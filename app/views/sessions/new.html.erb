@@ -9,10 +9,15 @@
     <%= f.email_field :email, type:"email", class: "form-control form-input", placeholder:"Nome de usuário ou e-mail", autofocus: true %>
     <%= f.password_field :password, type:"password", class: "form-control form-input", placeholder:"Senha" %>
 
+    <%= flash[:sucess] %>
+    <%= flash[:danger] %>
+
     <div class="<%=css_module("login","button-container") %>">
       <%= f.submit 'Login', class: "btn btn-primary" %>
       <%= link_to 'Registro', new_user_path, type:"button", class: "btn btn-default" %>
     </div>
   <% end %>
+
 </div>
+
 </div>
