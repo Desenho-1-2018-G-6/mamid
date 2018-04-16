@@ -1,5 +1,32 @@
-:module(welcome){
+:module(welcome) {
     .main-container {
         min-height: 90vh;
+        background-image: url('main-bg.jpg');
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .products-container {
+            margin: 20px;
+            background-color: white;
+            display: flex;
+        }
+    }
+    .card {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+        text-align: center;
+        .card-image {
+            width: 150px;
+            height: 150px;
+        }
+        >a {
+            text-decoration: none;
+            &:hover {
+                color: black;
+                background-color: transparent;
+                cursor: pointer;
+            }
+        }
     }
 }
