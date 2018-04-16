@@ -4,7 +4,7 @@
     });
 </script>
 
-<div class="<%=css_module("products","main-container") %>">
+<div class="<%=css_module("products","form-container") %>">
   <%= form_for(product) do |f| %>
     <% if product.errors.any? %>
       <div id="error_explanation">
@@ -19,41 +19,35 @@
         </ul>
       </div>
     <% end %>
-
-    <div class="<%=css_module("products","form-field") %>">
-      <div class="field">
-        <h3><%= f.label :name %></h3>
-        <%= f.text_field :name, class: "form-control form-input",
-                                placeholder:"Product name (Ex: Logitech G403)",
-                                autofocus: true %>
-      </div>
-
-
-      <div class="field">
-        <h3><%= f.label :price %></h3>
-        <%= f.text_field :price, class: "form-control form-input",
-                                 placeholder:"Product price (Ex: 249.90)",
-                                 autofocus: true %>
-      </div>
-
-      <div class="field">
-        <h3><%= f.label :stock %></h3>
-        <%= f.text_field :stock, class: "form-control form-input",
-                                 placeholder:"Product stock, only integer (Ex: 10)",
-                                 autofocus: true %>
-      </div>
-
-      <div class="field">
-        <h3> <%= f.label :description %> </h3>
+    <div class="field">
+      <h3><%= f.label :name %></h3>
+      <%= f.text_field :name, class: "form-control form-input",
+                              placeholder:"Product name (Ex: Logitech G403)",
+                              autofocus: true %>
+    </div>
+    <div class="field">
+      <h3><%= f.label :price %></h3>
+      <%= f.text_field :price, class: "form-control form-input",
+                               placeholder:"Product price (Ex: 249.90)",
+                               autofocus: true %>
+    </div>
+    <div class="field">
+      <h3><%= f.label :stock %></h3>
+      <%= f.text_field :stock, class: "form-control form-input",
+                               placeholder:"Product stock, only integer (Ex: 10)",
+                               autofocus: true %>
+    </div>
+    <div class="field">
+      <h3> <%= f.label :description %> </h3>
+      <div class="<%= css_module("products","text-area-field") %>">
         <%= f.text_area :description, style: "padding: 0 36.6% 0 36.6%;" %>
       </div>
-
-      <div class="actions">
-        <div>
-          <%= f.submit 'Confirm', class: "btn btn-success btn-block"%>
-          <%= link_to 'Back', welcome_index_path, class: "btn btn-primary btn-block",
-                                                  style: "color: white;"%>
-        </div>
+    </div>
+    <div class="actions">
+      <div class="<%= css_module("products","button-container") %>" >
+        <%= f.submit 'Confirm', class: "btn btn-success btn-block"%>
+        <%= link_to 'Back', welcome_index_path, class: "btn btn-primary btn-block",
+                                                style: "color: white;"%>
       </div>
     </div>
   <% end %>
