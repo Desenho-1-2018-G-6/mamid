@@ -4,7 +4,7 @@
 
 <div class="<%=css_module("login","form-container") %>">
   <%= form_for(:session, url: login_path) do |f| %>
-    <%= image_tag("little-guy.jpg", class: css_module("login","form-image")) %>
+    <%= image_tag("logo.png", class: css_module("login","form-image")) %>
     <%= f.email_field :email, type:"email", class: "form-control form-input", placeholder:"Nome de usuário ou e-mail", autofocus: true %>
     <%= f.password_field :password, type:"password", class: "form-control form-input", placeholder:"Senha" %>
 
