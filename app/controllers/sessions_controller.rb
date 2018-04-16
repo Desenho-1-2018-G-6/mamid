@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
         if user && user.authenticate(params[:session][:password])
             if user.admin?
                 log_in user
-                redirect_to "/admins/"
+                redirect_to admins_url
             else
                 log_in user
                 redirect_to user

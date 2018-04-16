@@ -15,7 +15,7 @@ module SessionsHelper
 
   def log_out
     session.delete(:user_id)
-	  @current_user = nil
+	@current_user = nil
   end
 
   def authenticate_user
@@ -31,4 +31,13 @@ module SessionsHelper
       redirect_to root_path
     end
   end
+
+  def check_current_user
+    if @current_user.admin?
+      redirect_to admins_url
+    else
+      redirect_to root_path
+    end
+  end
+
 end

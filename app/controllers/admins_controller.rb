@@ -71,4 +71,8 @@ class AdminsController < ApplicationController
     def admin_params
       params.fetch(:admin, {})
     end
+
+    def set_user_as_admin(user)
+        
+    end
 end
