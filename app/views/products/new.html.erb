@@ -1,11 +1,5 @@
-<script type="text/javascript">
-    bkLib.onDomLoaded(function() {
-      nicEditors.allTextAreas()
-    });
-</script>
+<div class="<%=css_module("products","main-container") %>">
+  <h1>Register a new product</h1>
 
-<h1>New Product</h1>
-
-<%= render 'form', product: @product %>
-
-<%= link_to 'Back', welcome_index_path %>
+  <%= render 'form', product: @product %>
+</div>

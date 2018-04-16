@@ -8,17 +8,16 @@
 
     <div class="<%=css_module("products","product-info") %>">
       <div class="<%=css_module("products","info-container") %>">
-        <h1>Name</h1>
-        <%= @product.name %>
+        <h1><%= @product.name %></h1>
 
         <h2>Price</h2>
-        <%= @product.price %>
+        R$ <%= @product.price %>
 
         <h2>Stock</h2>
         <%= @product.stock %>
       </div>
 
-      <button type="button" class="btn btn-success btn-lg btn-block">Buy</button>
+      <button type="button" class="btn btn-success btn-lg btn-block">Add to Cart</button>
     </div>
   </div>
 
