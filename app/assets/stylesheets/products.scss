@@ -7,7 +7,7 @@
     display: block;
     padding: 0px 50px 0px 50px;
     height: 90vh;
-    width: 100vw;
+    width: 100%;
     max-width: 100%;
 
     h1 {
@@ -28,8 +28,8 @@
   .product-info {
     display: flex;
     flex-direction: column;
-    width: 50vw;
-    padding: 0px 20vw 40px 20vw;
+    width: 100vw;
+    padding: 0px 10vw 40px 10vw;
   }
 
   .info-container {

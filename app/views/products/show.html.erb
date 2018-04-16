@@ -2,7 +2,7 @@
 
 <div class="<%=css_module("products","main-container") %>">
   <div class="<%=css_module("products","shopping-container") %>">
-    <div class="<%=css_module("products","image-div") %>">
+    <div class="<%=css_module("products","form-image") %>">
       <img src="http://alanfal-group.com/wp-content/uploads/layerslider/Carousel-demo/computer-300x169.png" alt="PC" class="<%=css_module("products","form-image") %>">
     </div>
 
@@ -21,7 +21,9 @@
     </div>
   </div>
 
-  <h1>Product Description</h1>
-  <%= @product.description.html_safe %>
+  <div class="info-container">
+    <h1>Product Description</h1>
+    <%= @product.description.html_safe%>
+  </div>
 
 </div>
