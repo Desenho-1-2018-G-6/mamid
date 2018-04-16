@@ -2,7 +2,10 @@
 <html>
     <div class="<%= css_module("header","main-container")%>" >
         <div class="<%= css_module("header", "left-content") %>">
-            <%= link_to 'MAMID', root_path %>
+            <%= link_to root_path do %>
+                <%= image_tag('logo.png', class: css_module("header","logo")) %>
+            <% end %>
+
         </div>
         <div class="<%= css_module("header", "right-content")%>" >
             <%= link_to 'Produtos', products_path %>    
