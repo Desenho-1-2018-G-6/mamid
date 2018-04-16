@@ -1,0 +1,66 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+:module(login){
+    .main-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-image: url('background.jpg');
+        min-height: 90vh;
+        width: 100vw;
+        max-width: 100%;
+    }
+
+    .main-title {
+        display: flex;
+        color: #E4E4E4;
+        font-size: 50px;
+        margin-top: 50px;
+        margin-bottom: 100px;
+    }
+
+    .form-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border-radius: 10px;
+        height: 170px;
+        width: 380px;
+        min-width: 300px;
+        >form {
+            >input {
+                margin-top: 8px;
+            }
+        }
+        @media screen and (max-width:530px) {
+            width: 90%;
+        }
+    }
+
+    .form-image {
+        width: 100px;
+        position: absolute;
+        top: 120px;
+        @media screen and (max-width:530px) {
+            width: 70px;
+            top: 150px;
+        }
+    }
+
+    .button-container {
+        text-align: center;
+        margin: 5px;
+        >a {
+            margin: 10px 10px 0 10px;
+        }
+        >input{
+            margin: 10px 10px 0 10px;
+        }
+    }
+
+    .btn:visited {
+        color: black;
+    }
+}

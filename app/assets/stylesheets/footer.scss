@@ -1,0 +1,24 @@
+:module(footer){
+    .main {
+        right: 0;
+        bottom: 0;
+        height: 150px;
+        width: 100vw;
+        max-width: 100%;
+        background-color: #555A5D;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: white 1px solid;
+        >p {
+            margin: 5px;
+            color: white;
+            font-size: 1em;
+            @media only screen and (max-width:530px) {
+                font-size: 0.8em;
+            }
+        }
+    }
+}
+
