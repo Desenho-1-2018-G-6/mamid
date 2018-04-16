@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <div class="<%= css_module("header","main-container")%>" >
+        <div class="<%= css_module("header", "left-content") %>">
+            <%= link_to 'MAMID', root_path %>
+        </div>
+        <div class="<%= css_module("header", "right-content")%>" >
+            <%= link_to 'Produtos', products_path %>    
+            <%= link_to 'Login', login_path %>
+            <%= link_to 'Cadastro', new_user_path %>
+            <%= link_to 'Carrinho', root_path %>
+        </div>
+    </div>
+</html>
