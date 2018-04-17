@@ -9,6 +9,8 @@
         min-height: 90vh;
         width: 100%;
         max-width: 100%;
+        padding: 20px;
+
         h1 {
             text-align: center;
             padding-bottom: 20px;
@@ -23,7 +25,7 @@
         border-radius: 10px;
         width: 500px;
         padding: 10px 0 10px 0;
-        margin: 10px;
+        margin: 20px;
         @media screen and (max-width: 530px) {
             width: 90%;
         }
@@ -37,23 +39,26 @@
       justify-content: center;
       background-color: #FFFFFF;
       width: 90%;
-      // margin: 0 10vw 0 10vw;
-      padding-top: 0 0 10px 0;
+      // margin: 10px;
+      padding: 10px;
       border-radius: 10px;
-
-      @media screen and (max-width: 530px){
-        display: block;
-      }
     }
 
-    .form-image {
-        width: 100%;
+    .div-image {
+        // min-width: 0%;
+        width: 50%;
+        padding-top: 60px;
+        height: auto;
+    }
+
+    .image {
+      width: 45vw;
     }
 
     .product-info {
         display: flex;
         flex-direction: column;
-        width: 50vw;
+        width: 70%;
         padding: 0px 2vw 20px 2vw;
 
         >button {
@@ -85,11 +90,18 @@
     .button-container {
         display: flex;
         >a {
-            // margin-top: 0 !important;
             margin: 0 0 0 5px !important;
         }
         >input {
             margin: 0 5px 0 0;
         }
+    }
+
+    .info-product-container {
+      display: flex;
+
+      @media screen and (max-width: 530px){
+        display: block;
+      }
     }
 }
