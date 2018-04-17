@@ -1,5 +1,6 @@
 class AdminsController < ApplicationController
   before_action :set_admin, only: [:show, :edit, :update, :destroy]
+  before_action :check_current_user
 
   # GET /admins
   # GET /admins.json
@@ -73,6 +74,6 @@ class AdminsController < ApplicationController
     end
 
     def set_user_as_admin(user)
-        
+
     end
 end

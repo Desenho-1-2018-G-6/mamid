@@ -33,10 +33,12 @@ module SessionsHelper
   end
 
   def check_current_user
-    if @current_user.admin?
-      redirect_to admins_url
+    if logged_in?
+        if !@current_user.admin?
+          redirect_to root_path
+        end
     else
-      redirect_to root_path
+        redirect_to root_path
     end
   end
 
