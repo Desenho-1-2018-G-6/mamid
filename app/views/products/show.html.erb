@@ -1,13 +1,13 @@
-<%= link_to 'Edit', edit_product_path(@product) %>
+<div class="<%= css_module("products", "main-container") %>">
+  <div class="<%= css_module("products", "shopping-container") %>">
+    <div class="<%= css_module("products", "info-product-container")%>">
+      <div class="<%=css_module("products","div-image") %>">
+        <img src="http://alanfal-group.com/wp-content/uploads/layerslider/Carousel-demo/computer-300x169.png"
+        alt="PC"
+        class="<%= css_module("products", "image") %>">
+      </div>
 
-<div class="<%=css_module("products","main-container") %>">
-  <div class="<%=css_module("products","shopping-container") %>">
-    <div class="<%=css_module("products","form-image") %>">
-      <img src="http://alanfal-group.com/wp-content/uploads/layerslider/Carousel-demo/computer-300x169.png" alt="PC" class="<%=css_module("products","form-image") %>">
-    </div>
-
-    <div class="<%=css_module("products","product-info") %>">
-      <div class="<%=css_module("products","info-container") %>">
+      <div class="<%=css_module("products","product-info") %>">
         <h1><%= @product.name %></h1>
 
         <h2>Price</h2>
@@ -15,15 +15,18 @@
 
         <h2>Stock</h2>
         <%= @product.stock %>
-      </div>
 
-      <button type="button" class="btn btn-success btn-lg btn-block">Add to Cart</button>
+        <button type="button" class="btn btn-success btn-lg btn-block">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="info-container">
+      <h1>Product Description</h1>
+      <%= @product.description.html_safe%>
     </div>
   </div>
-
-  <div class="info-container">
-    <h1>Product Description</h1>
-    <%= @product.description.html_safe%>
-  </div>
-
 </div>
+
+
+
+ <!-- <%= link_to 'Edit', edit_product_path(@product), style: "display: none;" %> -->
