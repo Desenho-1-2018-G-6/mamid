@@ -45,14 +45,22 @@
     }
 
     .div-image {
-        // min-width: 0%;
         width: 50%;
-        padding-top: 60px;
+        padding-top: 40px;
         height: auto;
+
+
+      @media screen and (max-width: 530px){
+        width: auto;
+      }
     }
 
     .image {
-      width: 45vw;
+      width: 40vw;
+
+      @media screen and (max-width: 530px){
+        width: 100%;
+      }
     }
 
     .product-info {
