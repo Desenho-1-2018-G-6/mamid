@@ -5,8 +5,9 @@
     .main-container {
         display: flex;
         align-items: center;
+        justify-content: center;
         flex-direction: column;
-        background-image: url('background.jpg');
+        background-image: url('main-bg.jpg');
         min-height: 90vh;
         width: 100vw;
         max-width: 100%;
@@ -22,8 +23,10 @@
 
     .form-image {
         width: 85px;
-        position: absolute;
-        top: 92px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
     }
 
     .register-container {
@@ -35,9 +38,9 @@
         border-radius: 10px;
         width: 50%;
         max-width: 450px;
-        min-width: 300px;
+        min-width: 250px;
         padding: 20px;
-        @media screen and (max-width:530px) {
+        @media screen and (max-width:710px) {
             width: 90%;
         }
 
@@ -49,6 +52,9 @@
             >input {
                 width: 100%;
             }
+        }
+        @media screen and (max-width:710px) {
+            width: 95%;
         }
     }
 
@@ -66,5 +72,9 @@
     .button-container {
         text-align: center;
         margin-top: 20px;
+    }
+
+    .field {
+        margin-right: 10px;
     }
 }

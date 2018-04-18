@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
   </head>
 
   <body>
+    <%= render "layouts/header" %>
     <%= yield %>
-    <%= render "layouts/footer" %>
   </body>
-  
+<footer>
+  <%= render "layouts/footer" %>
+
+</footer>
 </html>

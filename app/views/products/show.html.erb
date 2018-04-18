@@ -1,33 +1,32 @@
-<div style="display: block;">
-  <div style="display: flex;">
-    <img src="http://alanfal-group.com/wp-content/uploads/layerslider/Carousel-demo/computer-300x169.png" alt="PC" style="width: 400px;">
+<div class="<%= css_module("products", "main-container") %>">
+  <div class="<%= css_module("products", "shopping-container") %>">
+    <div class="<%= css_module("products", "info-product-container")%>">
+      <div class="<%=css_module("products","div-image") %>">
+        <img src="http://alanfal-group.com/wp-content/uploads/layerslider/Carousel-demo/computer-300x169.png"
+        alt="PC"
+        class="<%= css_module("products", "image") %>">
+      </div>
 
-    <div style="display: block;">
-      <p>
-        <h1>Name</h1>
-        <%= @product.name %>
-      </p>
+      <div class="<%=css_module("products","product-info") %>">
+        <h1><%= @product.name %></h1>
 
-      <p>
         <h2>Price</h2>
-        <%= @product.price %>
-      </p>
+        R$ <%= @product.price %>
 
-      <p>
         <h2>Stock</h2>
         <%= @product.stock %>
-      </p>
 
-      <button type="button" class="btn btn-success btn-lg btn-block">Buy</button>
+        <button type="button" class="btn btn-success btn-lg btn-block">Add to Cart</button>
+      </div>
+    </div>
 
+    <div class="info-container">
+      <h1>Product Description</h1>
+      <%= @product.description.html_safe%>
     </div>
   </div>
 </div>
 
-<p>
-  <h1>Description</h1>
-  <%= @product.description %>
-</p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+
+ <!-- <%= link_to 'Edit', edit_product_path(@product), style: "display: none;" %> -->

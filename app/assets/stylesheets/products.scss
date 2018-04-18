@@ -1,3 +1,115 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+:module(products) {
+    .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 90vh;
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+
+        h1 {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        background-image: url("main-bg.jpg");
+    }
+    .form-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        width: 500px;
+        padding: 10px 0 10px 0;
+        margin: 20px;
+        @media screen and (max-width: 530px) {
+            width: 90%;
+        }
+        >form {
+          width: 90%;
+        }
+    }
+    .shopping-container {
+      display: block;
+      align-items: center;
+      justify-content: center;
+      background-color: #FFFFFF;
+      width: 90%;
+      // margin: 10px;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .div-image {
+        width: 50%;
+        padding-top: 40px;
+        height: auto;
+
+
+      @media screen and (max-width: 530px){
+        width: auto;
+      }
+    }
+
+    .image {
+      width: 40vw;
+
+      @media screen and (max-width: 530px){
+        width: 100%;
+      }
+    }
+
+    .product-info {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        padding: 0px 2vw 20px 2vw;
+
+        >button {
+          margin-top: 10px;
+        }
+
+        @media screen and (max-width: 530px){
+          width: auto;
+          margin-top: 20px;
+        }
+    }
+
+    .info-container {
+        margin-bottom: 10px;
+
+    }
+
+    .form-field {
+        width: 90%;
+
+    }
+
+    .text-area-field {
+        >div {
+            width: 100% !important;
+        }
+    }
+
+    .button-container {
+        display: flex;
+        >a {
+            margin: 0 0 0 5px !important;
+        }
+        >input {
+            margin: 0 5px 0 0;
+        }
+    }
+
+    .info-product-container {
+      display: flex;
+
+      @media screen and (max-width: 530px){
+        display: block;
+      }
+    }
+}
