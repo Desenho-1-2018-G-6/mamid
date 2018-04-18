@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user, except: [:new, :create]
   before_action :not_allow_to_enter_login, only: [:new, :create]
+  before_action :check_current_user
 
   # GET /users
   # GET /users.json
@@ -71,6 +72,10 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :email_confirmation, :password, :password_confirmation, :cpf, :birth_date, :gender, :phone)
+      params.require(:user).permit(:first_name, :last_name, :email, :email_confirmation, :password, :password_confirmation, :cpf, :birth_date, :gender, :phone, :admin)
+    end
+
+    def redirect_to_root
+      redirect_to root_path
     end
 end

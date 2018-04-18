@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :admins
   get 'welcome/index'
   # comentar o root welcome depois
   root 'welcome#index'
