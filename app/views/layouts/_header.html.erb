@@ -17,11 +17,11 @@
             <% end %>
 
         </div>
-        <div class="dropdown">
-          <button class="dropbtn">
+        <div class="<%= css_module("header", "dropdown")%>">
+          <button class="<%= css_module("header", "dropbtn")%>">
             <i class="fa fa-bars"></i>
           </button>
-          <div class="dropdown-content">
+          <div class="<%= css_module("header", "dropdown-content")%>">
             <%= link_to 'Produtos', products_path %>
             <%if logged_in? %>
                 <%= link_to 'Carrinho', root_path %>
