@@ -9,6 +9,8 @@
             margin: 20px;
             background-color: white;
             display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
         }
     }
     .card {
@@ -16,6 +18,8 @@
         flex-direction: column;
         margin: 20px;
         text-align: center;
+        width: 150px;
+
         .card-image {
             width: 150px;
             height: 150px;
