@@ -3,8 +3,8 @@
   <div class="<%= css_module("welcome","products-container")%>">
     <% @products.each do |product_show| %>
       <div class="<%=css_module("welcome","card") %>" >
-      <%= image_tag("placeholder.png", class: css_module("welcome","card-image")) %>
-      <%= link_to product_show.name, product_show %>
+        <%= image_tag(product_show.product_image.url(:thumb), class: css_module("welcome","card-image")) %>
+        <%= link_to product_show.name, product_show %>
       </div>
     <% end %>
   </div>
