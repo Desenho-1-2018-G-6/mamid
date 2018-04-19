@@ -2,9 +2,7 @@
   <div class="<%= css_module("products", "shopping-container") %>">
     <div class="<%= css_module("products", "info-product-container")%>">
       <div class="<%=css_module("products","div-image") %>">
-        <img src="http://alanfal-group.com/wp-content/uploads/layerslider/Carousel-demo/computer-300x169.png"
-        alt="PC"
-        class="<%= css_module("products", "image") %>">
+        <%= image_tag @product.product_image.url(:medium) %>
       </div>
 
       <div class="<%=css_module("products","product-info") %>">

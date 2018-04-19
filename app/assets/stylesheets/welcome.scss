@@ -18,11 +18,13 @@
         flex-direction: column;
         margin: 20px;
         text-align: center;
+        font-weight: bold;
         width: 150px;
 
         .card-image {
             width: 150px;
             height: 150px;
+            margin-bottom: 5px;
         }
         >a {
             text-decoration: none;
