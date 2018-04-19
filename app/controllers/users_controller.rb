@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user, except: [:new, :create]
   before_action :not_allow_to_enter_login, only: [:new, :create]
-  before_action :check_current_user
+  before_action :check_current_user, except: [:new, :create]
 
   # GET /users
   # GET /users.json
