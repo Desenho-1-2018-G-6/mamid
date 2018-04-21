@@ -1,34 +1,45 @@
-<p id="notice"><%= notice %></p>
+<div class="<%=css_module("products","main-container") %>">
 
-<h1>Products</h1>
+  <div>
+    <h1>Products</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Stock</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <%= image_tag product.product_image.url(:medium) %>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= product.price %></td>
-        <td><%= product.stock %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class="<%=css_module("products", "grid-container")%>">
+      
+          
+        <% @products.each do |product| %>
+        <div class="<%=css_module("products","shopping-container") %>">
+          <div class="<%= css_module("products", "info-product-container")%>">
+            <div class="<%=css_module("products","div-image") %>">
+              <%= image_tag product.product_image.url(:medium) %>
+            </div>
+
+            <div class="<%=css_module("products","product-info") %>">
+              <h3><%= product.name %></h1>
+
+              <h3>Price</h2>
+              R$ <%= product.price %>
+
+              <h2>Stock</h2>
+              <%= product.stock %>
+            </div>
+          </div>
+
+          <div class="info-container">
+            <h3>Product Description</h1>
+            <%= product.description.html_safe%>
+          </div>
+            <%= link_to 'Show', product %>
+            <%= link_to 'Edit', edit_product_path(product) %>
+            <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+        <% end %>
+
+    </div>  
+</div>
 
 <br>
 
 <%= link_to 'New Product', new_product_path %>
+
+</div>
