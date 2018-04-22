@@ -11,10 +11,16 @@
 
   <body>
     <%= render "layouts/header" %>
-    <% if current_user != nil %>
-      <%= current_user.show_sidebar %>
-    <% end %>
-    <%= yield %>
+    <div class="<%=css_module("main","container")%>">
+      <div class="<%=css_module("main","left-content")%>">
+        <% if current_user != nil %>
+          <%= current_user.show_sidebar %>
+        <% end %>
+      </div>
+        <div class="<%=css_module("main","right-content")%>">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 <footer>
   <%= render "layouts/footer" %>
