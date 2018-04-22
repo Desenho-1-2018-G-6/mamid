@@ -11,6 +11,9 @@
 
   <body>
     <%= render "layouts/header" %>
+    <% if current_user != nil %>
+      <%= current_user.show_sidebar %>
+    <% end %>
     <%= yield %>
   </body>
 <footer>

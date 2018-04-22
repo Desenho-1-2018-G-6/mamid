@@ -33,7 +33,7 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem 'twitter-bootstrap-rails'
 
 gem 'css_modules'
-gem 'active_decorator'
+gem 'draper'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
