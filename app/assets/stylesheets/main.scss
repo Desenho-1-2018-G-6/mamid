@@ -4,15 +4,21 @@
         width: 100%;
         height: 100%;
     }
-    .left-content {}
+    .left-content {
+        
+    }
     .right-content {
         width: 100%;
     }
-    @media (min-width: 767px) {
-        .sidebar {
-            position: inherit;
-            min-height: 100vh;
-            height: 100%;
+    .sidebar {
+        position: inherit;
+        min-height: 100vh;
+        height: 100%;
+        >i {
+            @media (max-width: 767px) {
+                top: 15px !important;
+                left: 100px;
+            }
         }
     }
 }
