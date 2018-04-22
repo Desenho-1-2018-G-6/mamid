@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
         user = User.find_by(email: params[:session][:email].downcase)
 
         if user && user.authenticate(params[:session][:password])
-            if user.admin?
+            if user.user_type == "admin"
                 log_in user
                 redirect_to admins_url
             else

@@ -34,7 +34,7 @@ module SessionsHelper
 
   def check_current_user
     if logged_in?
-        if !@current_user.admin?
+        if !@current_user.user_type == "admin"
           # redirect_to users_path + user.id
         end
     else
