@@ -1,7 +1,7 @@
 <div class="<%=css_module("products","main-container") %>">
 
   <div>
-
+  
     <div class="<%=css_module("products","button-new-product") %>">
       <%= link_to 'New Product', new_product_path %>
     </div>
@@ -12,7 +12,7 @@
         <div class="<%=css_module("products","shopping-container") %>">
           <div class="<%= css_module("products", "info-product-container")%>">
             <div class="<%=css_module("products","div-image") %>">
-              <%= image_tag product.product_image.url(:medium) %>
+              <%= image_tag product.product_image.url(:thumb) %>
             </div>
 
             <div class="<%=css_module("products","product-info") %>">
