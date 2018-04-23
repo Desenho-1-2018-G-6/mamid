@@ -2,16 +2,16 @@
   <div class="<%= css_module("products", "shopping-container") %>">
     <div class="<%= css_module("products", "info-product-container")%>">
       <div class="<%=css_module("products","div-image") %>">
-        <%= image_tag @product.product_image.url(:medium) %>
+        <%= image_tag @product.product_image.url(:thumb) %>
       </div>
 
       <div class="<%=css_module("products","product-info") %>">
-        <h1><%= @product.name %></h1>
+        <h6><%= @product.name %></h6>
 
-        <h2>Price</h2>
+        <h6>Price</h6>
         R$ <%= @product.price %>
 
-        <h2>Stock</h2>
+        <h6>Stock</h6>
         <%= @product.stock %>
 
         <button type="button" class="btn btn-success btn-lg btn-block">Add to Cart</button>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="info-container">
-      <h1>Product Description</h1>
+      <h6>Product Description</h6>
       <%= @product.description.html_safe%>
     </div>
   </div>

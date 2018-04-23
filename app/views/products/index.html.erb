@@ -16,18 +16,20 @@
             </div>
 
             <div class="<%=css_module("products","product-info") %>">
-              <h6><%= product.name %></h1>
+              <h6><%= product.name %></h6>
 
-              <h6>Price</h2>
+              <h6>Price</h6>
               R$ <%= product.price %>
 
-              <h6>Stock</h2>
+              <h6>Stock</h6>
               <%= product.stock %>
             </div>
           </div>
+          <div class="<%= css_module("products", "card-buttons")%>">
             <%= link_to 'Show', product %>
             <%= link_to 'Edit', edit_product_path(product) %>
             <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
         </div>
         <% end %>
 
