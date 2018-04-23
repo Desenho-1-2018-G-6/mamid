@@ -1,12 +1,13 @@
 <div class="<%=css_module("products","main-container") %>">
 
   <div>
-    <h1>Products</h1>
 
+    <div class="<%=css_module("products","button-new-product") %>">
+      <%= link_to 'New Product', new_product_path %>
+    </div>
 
     <div class="<%=css_module("products", "grid-container")%>">
-      
-          
+
         <% @products.each do |product| %>
         <div class="<%=css_module("products","shopping-container") %>">
           <div class="<%= css_module("products", "info-product-container")%>">
@@ -35,11 +36,11 @@
         </div>
         <% end %>
 
-    </div>  
+    </div>
 </div>
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+
 
 </div>
