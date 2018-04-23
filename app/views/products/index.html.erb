@@ -16,19 +16,14 @@
             </div>
 
             <div class="<%=css_module("products","product-info") %>">
-              <h3><%= product.name %></h1>
+              <h6><%= product.name %></h1>
 
-              <h3>Price</h2>
+              <h6>Price</h2>
               R$ <%= product.price %>
 
-              <h2>Stock</h2>
+              <h6>Stock</h2>
               <%= product.stock %>
             </div>
-          </div>
-
-          <div class="info-container">
-            <h3>Product Description</h1>
-            <%= product.description.html_safe%>
           </div>
             <%= link_to 'Show', product %>
             <%= link_to 'Edit', edit_product_path(product) %>

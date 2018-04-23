@@ -39,10 +39,12 @@
       align-items: center;
       justify-content: center;
       background-color: #FFFFFF;
-      width: 90%;
+      width: 300px;
+      height: 300px;
       // margin: 10px;
       padding: 10px;
       border-radius: 10px;
+
     }
 
     .grid-container {
@@ -54,7 +56,7 @@
     }
 
     .div-image {
-        width: 50%;
+        width: 100%;
         padding-top: 40px;
         height: auto;
 
