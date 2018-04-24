@@ -8,7 +8,13 @@ class UserDecorator < Draper::Decorator
 
   def show_sidebar
     if current_user.user_type.include? "admin"
-    render :partial => "users/admin_sidebar"
+      render :partial => "users/admin_sidebar"
+    end
+  end
+
+  def new_product
+    if current_user.user_type.include? "admin"
+      render 'form', product: Product.new
     end
   end
 

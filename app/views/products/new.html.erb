@@ -1,4 +1,5 @@
 <div class="<%=css_module("products","main-container") %>">
-  
-  <%= render 'form', product: @product %>
+  <% if current_user != nil %>
+    <%= current_user.new_product %>
+  <% end %>
 </div>
