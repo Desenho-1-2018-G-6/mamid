@@ -6,20 +6,20 @@
       </div>
 
       <div class="<%=css_module("products","product-info") %>">
-        <h6><%= @product.name %></h6>
+        <h5><b><%= @product.name %></b></h5>
 
-        <h6>Price</h6>
+        <h6><b>Price</b></h6>
         R$ <%= @product.price %>
 
-        <h6>Stock</h6>
+        <h6><b>Stock</b></h6>
         <%= @product.stock %>
 
-        <button type="button" class="btn btn-success btn-lg btn-block">Add to Cart</button>
+        <button type="button" class="btn btn-success btn-sm btn-block">Add to Cart</button>
       </div>
     </div>
 
     <div class="info-container">
-      <h6>Product Description</h6>
+      <h6><b>Product Description</b></h6>
       <%= @product.description.html_safe%>
     </div>
   </div>
