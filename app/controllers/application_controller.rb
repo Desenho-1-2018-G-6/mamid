@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_order
+  add_flash_types :success, :warning, :danger, :info
 
   def current_order
     if !session[:order_id].nil?
