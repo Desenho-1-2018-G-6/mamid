@@ -6,9 +6,9 @@
 
 <div class="nav-side-menu <%=css_module("main","sidebar")%>">
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-        <div style="height: 20%; text-align: center;">
+        <div class="div-image-logo">
           <%= link_to root_path do %>
-              <%= image_tag('logo.png', class: css_module("header","logo"), style: "max-width: 40%; margin-left: auto; margin-right: auto;") %>
+              <%= image_tag('logo.png', class: "image-logo") %>
           <% end %>
         </div>
 
@@ -34,8 +34,7 @@
                   <a href="#"><i class="fa fa-users fa-lg"></i> Usuários <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="new">
-                  <li>Criar</li>
-                  <li>Definir como administrador</li>
+                  <li>Gerenciar</li>
                 </ul>
 
                <li>
