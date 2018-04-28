@@ -2,6 +2,11 @@
 
 <h1>Products</h1>
 
+<%= form_tag(products_path, method: :get) do %>
+  <%= text_field_tag :term, params[:term]  %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
+
 <table>
   <thead>
     <tr>
