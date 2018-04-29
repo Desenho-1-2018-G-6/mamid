@@ -2,7 +2,7 @@
   <div class="<%= css_module("products_show", "shopping-container") %>">
     <div class="<%= css_module("products_show", "info-product-container")%>">
       <div class="<%=css_module("products_show","div-image") %>">
-        <%= image_tag @product.product_image.url(:thumb) %>
+        <%= image_tag @product.product_image.url(:medium) %>
       </div>
 
       <div class="<%=css_module("products_show","product-info") %>">
