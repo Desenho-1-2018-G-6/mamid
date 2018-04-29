@@ -1,25 +1,25 @@
-<div class="<%= css_module("products", "main-container") %>">
-  <div class="<%= css_module("products", "shopping-container") %>">
-    <div class="<%= css_module("products", "info-product-container")%>">
-      <div class="<%=css_module("products","div-image") %>">
+<div class="<%= css_module("products_show", "main-container") %>">
+  <div class="<%= css_module("products_show", "shopping-container") %>">
+    <div class="<%= css_module("products_show", "info-product-container")%>">
+      <div class="<%=css_module("products_show","div-image") %>">
         <%= image_tag @product.product_image.url(:thumb) %>
       </div>
 
-      <div class="<%=css_module("products","product-info") %>">
-        <h5><b><%= @product.name %></b></h5>
+      <div class="<%=css_module("products_show","product-info") %>">
+        <h2><b><%= @product.name %></b></h2>
 
-        <h6><b>Price</b></h6>
+        <h4><b>Price</b></h4>
         R$ <%= @product.price %>
 
-        <h6><b>Stock</b></h6>
+        <h4><b>Stock</b></h4>
         <%= @product.stock %>
 
-        <button type="button" class="btn btn-success btn-sm btn-block">Add to Cart</button>
+        <button type="button" class="btn btn-success btn-lg btn-block">Add to Cart</button>
       </div>
     </div>
 
     <div class="info-container">
-      <h6><b>Product Description</b></h6>
+      <h3><b>Product Description</b></h3>
       <%= @product.description.html_safe%>
     </div>
   </div>
