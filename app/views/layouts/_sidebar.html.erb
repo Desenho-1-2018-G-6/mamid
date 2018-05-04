@@ -4,8 +4,7 @@
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-<div class="nav-side-menu">
-    <div class="brand">Mamid</div>
+<div class="nav-side-menu <%=css_module("main","sidebar")%>">
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
         <div class="menu-list">
@@ -21,7 +20,9 @@
                   <a href="#"><i class="fa fa-gift fa-lg"></i> Produtos <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="products">
-                    <li><a href="#">Cadastrar</a></li>
+                    <%= link_to new_product_path do %>
+                      <li>Cadastrar</li>  
+                    <% end %>
                     <li><a href="#">Editar</a></li>
                     <li><a href="#">Verificar Estoque</a></li>
                     <li><a href="#">Excluir produto</a></li>
