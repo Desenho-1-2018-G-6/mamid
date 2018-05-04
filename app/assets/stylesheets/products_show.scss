@@ -1,7 +1,7 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-:module(products) {
+:module(products_show) {
     .main-container {
         display: flex;
         justify-content: center;
@@ -35,19 +35,14 @@
         }
     }
     .shopping-container {
-      //display: block;
-      align-items: center;
-      justify-content: center;
-      background-color: #FFFFFF;
-      //width: 300px;
-      //height: 300px;
-      padding: 10px;
-      border-radius: 10px;
-      
-      display: inline-block;
-      position: relative;
-      width: 100%;
-
+        display: inline-block;
+        position: relative;
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+        background-color: #FFFFFF;
+        padding: 20px;
+        border-radius: 10px;
     }
 
     .grid-container {
@@ -61,7 +56,8 @@
     .div-image {
         width: 100%;
         height: auto;
-
+        position: relative;
+        text-align: center;
 
       @media screen and (max-width: 530px){
         width: auto;
@@ -80,7 +76,7 @@
         display: inline-block;
         position: relative;
         width: 100%;
-        padding: 10px;
+        padding: 10px;        
 
         >button {
           margin-top: 10px;
