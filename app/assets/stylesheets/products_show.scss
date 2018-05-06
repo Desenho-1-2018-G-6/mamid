@@ -76,7 +76,7 @@
         display: inline-block;
         position: relative;
         width: 100%;
-        padding: 10px;        
+        padding: 10px;
 
         >button {
           margin-top: 10px;
@@ -140,6 +140,11 @@
         display: inline-block;
         font-size: 12px;
         border-radius: 10px;
-    }    
+    }
+
+    .product-title {
+      color: black !important ;
+      size: 18px;
+    }
 
 }

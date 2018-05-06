@@ -10,7 +10,7 @@
             </div>
 
             <div class="<%=css_module("products","product-info") %>">
-              <h4><%= link_to product.name, product%></h4>
+              <%= link_to product.name, product, class: css_module("products","product-title") %>
 
               <h6><b>Price</b></h6>
               R$ <%= product.price %>
@@ -20,8 +20,8 @@
             </div>
           </div>
           <div class="<%= css_module("products", "card-buttons")%>">
-            <%= link_to 'Edit', edit_product_path(product) %>
-            <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to "<button type='button' class='btn btn-info'>Editar</button>".html_safe, edit_product_path(product) %>
+            <%= link_to "<button type='button' class='btn btn-danger'>Deletar</button>".html_safe, product, method: :delete, data: { confirm: 'Are you sure?' } %>
           </div>
         </div>
         <% end %>
