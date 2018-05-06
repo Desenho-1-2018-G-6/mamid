@@ -14,7 +14,11 @@
         <h4><b>Stock</b></h4>
         <%= @product.stock %>
 
-        <%= link_to "<button type='button' class='btn btn-success btn-lg btn-block'> Add to Cart </button>".html_safe, controller: 'order_items', action: 'create', quantity: 1, product_id:@product.id, class: "btn btn-success btn-lg btn-block" %>
+        <%= link_to "<button type='button', id='send-to-cart', class='btn btn-success btn-lg btn-block'> Add to Cart </button>".html_safe,
+            confirm: "Remove this user ?",
+            controller: 'order_items', action: 'create',
+            order_item: { quantity: 1, product_id:@product.id },
+            class: "btn btn-success btn-lg btn-block" %>
 
 
       </div>

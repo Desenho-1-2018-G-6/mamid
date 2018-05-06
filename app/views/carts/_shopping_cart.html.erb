@@ -9,7 +9,7 @@
 <% end %>
 <% if @order_items.size == 0 %>
   <p class="text-center">
-    There are no items in your shopping cart.  Please <%= link_to "go back", root_path %> and add some items to your cart.
+    Você não tem produtos no carrinho. Por Favor <%= link_to "volte a loja", products_path %> e adicione algo ao carrinho.
   </p>
 <% else %>
   <% @order_items.each do |order_item| %>
