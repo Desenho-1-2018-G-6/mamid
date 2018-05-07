@@ -1,11 +1,5 @@
 <div class="<%=css_module("products","main-container") %>">
-
   <div>
-  
-    <div class="<%=css_module("products","button-new-product") %>">
-      <%= link_to 'New Product', new_product_path %>
-    </div>
-
     <div class="<%=css_module("products", "grid-container")%>">
 
         <% @products.each do |product| %>
@@ -16,7 +10,7 @@
             </div>
 
             <div class="<%=css_module("products","product-info") %>">
-              <h6><b><%= product.name %></b></h6>
+              <%= link_to product.name, product, class: css_module("products","product-title") %>
 
               <h6><b>Price</b></h6>
               R$ <%= product.price %>
@@ -26,9 +20,8 @@
             </div>
           </div>
           <div class="<%= css_module("products", "card-buttons")%>">
-            <%= link_to 'Show', product %>
-            <%= link_to 'Edit', edit_product_path(product) %>
-            <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to "<button type='button' class='btn btn-info'>Editar</button>".html_safe, edit_product_path(product) %>
+            <%= link_to "<button type='button' class='btn btn-danger'>Deletar</button>".html_safe, product, method: :delete, data: { confirm: 'Are you sure?' } %>
           </div>
         </div>
         <% end %>
