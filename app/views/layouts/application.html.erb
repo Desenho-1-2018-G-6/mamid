@@ -10,7 +10,14 @@
   </head>
 
   <body>
-    <%= render "layouts/header" %>
+    <% if logged_in? %>
+      <% if current_user.user_type.include? "user" %>
+        <%= render "layouts/header" %>
+      <% end %>
+    <% else %>
+      <%= render "layouts/header" %>
+    <% end %>
+
     <div class="<%=css_module("main","container")%>">
       <div class="<%=css_module("main","left-content")%>">
         <% if current_user != nil %>
