@@ -1,18 +1,22 @@
 <% @title = "Login" %>
 
 <div class="<%=css_module("login","main-container") %>">
-<h1 class="<%=css_module("login","main-title") %>" >Mamid</h1>
 
 <div class="<%=css_module("login","form-container") %>">
-  <%= image_tag("little-guy.jpg", class: css_module("login","form-image")) %>
   <%= form_for(:session, url: login_path) do |f| %>
+    <%= image_tag("logo.png", class: css_module("login","form-image")) %>
     <%= f.email_field :email, type:"email", class: "form-control form-input", placeholder:"Nome de usuário ou e-mail", autofocus: true %>
     <%= f.password_field :password, type:"password", class: "form-control form-input", placeholder:"Senha" %>
 
+    <%= flash[:sucess] %>
+    <%= flash[:danger] %>
+
     <div class="<%=css_module("login","button-container") %>">
       <%= f.submit 'Login', class: "btn btn-primary" %>
-      <%= link_to 'Registro', new_user_path, type:"button", class: "btn btn-default" %>
+      <%= link_to 'Cadastro', new_user_path, type:"button", class: "btn btn-default" %>
     </div>
   <% end %>
+
 </div>
+
 </div>

@@ -6,11 +6,31 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
   </head>
 
   <body>
-    <%= yield %>
-    <%= render "layouts/footer" %>
+    <% if logged_in? %>
+      <% if current_user.user_type.include? "user" %>
+        <%= render "layouts/header" %>
+      <% end %>
+    <% else %>
+      <%= render "layouts/header" %>
+    <% end %>
+
+    <div class="<%=css_module("main","container")%>">
+      <div class="<%=css_module("main","left-content")%>">
+        <% if current_user != nil %>
+          <%= current_user.show_sidebar %>
+        <% end %>
+      </div>
+        <div class="<%=css_module("main","right-content")%>">
+        <%= yield %>
+      </div>
+    </div>
   </body>
-  
+<footer>
+  <%= render "layouts/footer" %>
+
+</footer>
 </html>
