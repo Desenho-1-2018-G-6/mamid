@@ -41,7 +41,7 @@ module SessionsHelper
 
   def check_current_user
     if logged_in?
-      if !@current_user.user_type.include? "admin"
+      if !@current_user.user_type.to_s.include?("admin")
         redirect_to root_path
       end
     else

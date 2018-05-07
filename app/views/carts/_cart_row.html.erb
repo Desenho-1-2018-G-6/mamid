@@ -20,7 +20,7 @@
           <div class="col-xs-8 text-right">
             <div class="btn-group">
               <%= f.submit "Update Quantity", class: "btn btn-primary" %>
-              <%= link_to "Delete", order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.product.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger" } %>
+              <%= link_to "Delete", order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.product.name}' from your cart?" }, method: :delete, class: "btn btn-danger" } %>
             </div>
           </div>
         </div>

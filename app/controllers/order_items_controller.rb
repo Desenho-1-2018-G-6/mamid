@@ -41,6 +41,7 @@ class OrderItemsController < ApplicationController
     @order_item = @order.order_items.find(params[:id])
     if @order_item.destroy
        @order_items = @order.order_items
+       redirect_to :back
     else
        format.json { render json: @order_item.errors.full_messages, status: :unprocessable_enity }
     end
