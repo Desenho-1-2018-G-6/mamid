@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   get 'welcome/index'
 
   root 'welcome#index'
@@ -8,13 +7,12 @@ Rails.application.routes.draw do
   resources :products
   resources :users
 
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
+
+  root 'sessions#new'
   get 'sessions/new'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   get '/logout',  to: 'sessions#destroy'
-  
-  get 'cart/:id',         to: 'carts#show'
-  get 'cart/:id/update',  to: 'carts#update'
-  get 'cart/:id/destroy', to: 'carts#destroy'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
