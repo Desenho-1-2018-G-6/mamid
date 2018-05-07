@@ -15,12 +15,12 @@
         <div class="<%= css_module("header", "right-content")%>" >
             <%= link_to 'Produtos', products_path %>
             <%if logged_in? %>
-                <%= link_to 'Carrinho', root_path %>
+                <%= link_to 'Carrinho', cart_path %>
                 <%= link_to 'Logout', logout_path %>
             <% else %>
                 <%= link_to 'Login', login_path %>
                 <%= link_to 'Cadastro', new_user_path %>
-                <%= link_to 'Carrinho', root_path %>
+                <%= link_to 'Carrinho', cart_path %>
             <% end %>
 
         </div>

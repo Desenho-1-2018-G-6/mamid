@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user, except: [:new, :create]
   before_action :not_allow_to_enter_login, only: [:new, :create]
-  before_action :check_current_user, except: [:new, :create]
+  before_action :check_current_user, except: [:show, :new, :create]
 
   # GET /users
   # GET /users.json
@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id]).decorate
   end
 
   # GET /users/new
@@ -28,6 +29,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    @user.user_type = "user"
 
     respond_to do |format|
       if @user.save
@@ -72,7 +74,15 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :email_confirmation, :password, :password_confirmation, :cpf, :birth_date, :gender, :phone, :admin)
+      params.require(:user).permit(:first_name, :last_name, :email, :email_confirmation, :password, :password_confirmation, :cpf, :birth_date, :gender, :phone, :user_type)
+    end
+
+    def redirect_to_root
+      redirect_to root_path
+    end
+
+    def redirect_to_root
+      redirect_to root_path
     end
 
     def redirect_to_root

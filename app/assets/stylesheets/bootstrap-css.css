@@ -11,7 +11,7 @@
   color: #e1ffff;
 }
 .nav-side-menu .brand {
-  background-color: #23282e;
+  background-color: #282D32;
   line-height: 50px;
   display: block;
   text-align: center;
@@ -142,4 +142,15 @@
 body {
   margin: 0px;
   padding: 0px;
+}
+
+.image-logo {
+  max-width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.div-image-logo {
+  height: 20%;
+  text-align: center;
 }

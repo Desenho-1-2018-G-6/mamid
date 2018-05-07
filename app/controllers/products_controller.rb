@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :check_current_user, except: [:show]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
@@ -9,12 +10,14 @@ class ProductsController < ApplicationController
     else
       Product.all
     end
+    @order_item = current_order.order_items.new
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
+    @order_item = current_order.order_items.new
   end
 
   # GET /products/new
