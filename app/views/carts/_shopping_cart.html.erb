@@ -8,9 +8,11 @@
   </div>
 <% end %>
 <% if @order_items.size == 0 %>
-  <p class="text-center">
-    Você não tem produtos no carrinho. Por Favor <%= link_to "volte a loja", products_path %> e adicione algo ao carrinho.
-  </p>
+  <div class="<%=css_module("cart","without-product") %>">
+    <p class="<%=css_module("cart","text-format") %>">
+      Você não tem produtos no carrinho. Por favor <b><%= link_to "volte a loja", products_path %></b> e adicione algo.
+    </p>
+  </div>
 <% else %>
   <% @order_items.each do |order_item| %>
     <%= render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true %>

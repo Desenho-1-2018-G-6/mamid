@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180507094541) do
+ActiveRecord::Schema.define(version: 20180509195657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "carts", force: :cascade do |t|
     t.float "totalPrice"
+  end
+
+  create_table "empty_states", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "in_progress_states", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -32,9 +42,9 @@ ActiveRecord::Schema.define(version: 20180507094541) do
   end
 
   create_table "order_statuses", force: :cascade do |t|
-    t.string   "state"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "state",      default: "Empty"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "orders", force: :cascade do |t|
