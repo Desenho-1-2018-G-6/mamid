@@ -11,5 +11,13 @@ class UserDecorator < Draper::Decorator
       render :partial => "users/admin_sidebar"
     end
   end
-  
+
+  def show_edit_buttons
+    if current_user.user_type.include? "admin"
+      return true
+    else
+      return false
+    end
+  end
+
 end
