@@ -1,3 +1,15 @@
 <div class="<%=css_module("cart","main-container") %>">
   <%= render "shopping_cart" %>
 </div>
+
+<% @items = current_order.order_items %>
+<% total_pric = 0 %>
+
+<% @items.each do |item| %>
+  <% @total_price = item.total_price.to_i + @total_price.to_i %>    
+<% end %>
+
+<div class="<%=css_module("cart","cart-total-price") %>">
+  <b><%= "Total do Carrinho: R$" %>
+  <%= @total_price %></b>
+</div>
