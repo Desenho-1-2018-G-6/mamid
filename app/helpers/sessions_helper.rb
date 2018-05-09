@@ -14,6 +14,13 @@ module SessionsHelper
   end
 
   def log_out
+    if !session[:order_id].nil?
+      @order = Order.find(session[:order_id])
+      @order_items = OrderItem.where(order_id: @order.id)
+      @order_items.each do |item|
+        item.destroy
+      end
+    end
     session.delete(:user_id)
 	  @current_user = nil
   end
