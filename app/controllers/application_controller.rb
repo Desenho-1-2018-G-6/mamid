@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
     if !session[:order_id].nil?
       Order.find(session[:order_id])
     else
-      @order_status = OrderStatus.create(state: "In Progress")
+      @in_progress = InProgressState.new
+      @order_status = OrderStatus.create(state: @in_progress.status)
       Order.new(order_status_id: @order_status.id)
     end
   end

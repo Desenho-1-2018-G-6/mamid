@@ -2,4 +2,34 @@
     .main-container{
         padding: 25px;
     }
+    .without-product{
+        padding: 25px;
+        background-color: white;
+        border-radius: 10px;
+        font-size: 15%;
+    }
+    .text-format{
+        font-size: 1000%;
+        text-align: center;
+    }
+    .cart-image{
+        width: 50%;
+        height: auto;
+      @media screen and (max-width: 530px){
+        width: auto;
+      }
+    }
+    .cart-options{
+        margin-left: -40%;
+        margin-top: 23%;
+    }
+    .cart-total-price{
+        padding: 25px;
+        background-color: white;
+        border-radius: 10px;
+        font-size: 110%;
+        margin-left: 70%;
+        margin-right: 5%;
+        margin-bottom: 1%;
+    }
 }

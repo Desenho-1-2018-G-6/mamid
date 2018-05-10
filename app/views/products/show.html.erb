@@ -15,7 +15,7 @@
         <%= @product.stock %>
 
         <%= link_to "Adicionar ao Carrinho", order_items_path(order_item: {quantity: 1, product_id: @product}),
-        class:'btn btn-success btn-lg btn-block', method: :post %>
+        class:'btn btn-success btn-lg btn-block', method: :post, id: 'add-to-cart' %>
 
 
       </div>
