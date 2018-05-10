@@ -9,7 +9,7 @@
   <% @total_price = item.total_price.to_i + @total_price.to_i %>    
 <% end %>
 
-<% if !(@order_items.size == 0) %>
+<% if !(@state == "Empty") %>
   <div class="<%=css_module("cart","cart-total-price") %>">
     <b><%= "Total do Carrinho: R$" %>
     <%= @total_price %></b>
