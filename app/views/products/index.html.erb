@@ -19,10 +19,14 @@
               <%= product.stock %>
             </div>
           </div>
-          <div class="<%= css_module("products", "card-buttons")%>">
-            <%= link_to "<button type='button' class='btn btn-info'>Editar</button>".html_safe, edit_product_path(product) %>
-            <%= link_to "<button type='button' class='btn btn-danger'>Deletar</button>".html_safe, product, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>
+          <% if current_user != nil %>
+            <% if current_user.show_edit_buttons %>
+              <div class="<%= css_module("products", "card-buttons")%>">
+                <%= link_to "<button type='button' class='btn btn-info'>Editar</button>".html_safe, edit_product_path(product) %>
+                <%= link_to "<button type='button' class='btn btn-danger'>Deletar</button>".html_safe, product, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            <% end %>
+          <% end %>
         </div>
         <% end %>
 

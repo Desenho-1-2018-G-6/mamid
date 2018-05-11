@@ -1,17 +1,23 @@
 class ProductsController < ApplicationController
-  before_action :check_current_user, except: [:show]
+  before_action :check_current_user, except: [:show, :index]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = if params[:term]
+      Product.where('name LIKE ?', "%#{params[:term]}%").order('id DESC')
+    else
+      Product.all
+    end
+    @order_item = current_order.order_items.new
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
+    @order_item = current_order.order_items.new
   end
 
   # GET /products/new
@@ -71,6 +77,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :price, :stock, :product_image)
+      params.require(:product).permit(:name, :description, :price, :stock, :product_image, :term)
     end
 end

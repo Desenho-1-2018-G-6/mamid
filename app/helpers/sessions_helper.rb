@@ -14,6 +14,13 @@ module SessionsHelper
   end
 
   def log_out
+    if !session[:order_id].nil?
+      @order = Order.find(session[:order_id])
+      @order_items = OrderItem.where(order_id: @order.id)
+      @order_items.each do |item|
+        item.destroy
+      end
+    end
     session.delete(:user_id)
 	  @current_user = nil
   end
@@ -41,12 +48,18 @@ module SessionsHelper
 
   def check_current_user
     if logged_in?
-      if !@current_user.user_type.include? "admin"
+      if !@current_user.user_type.to_s.include?("admin")
         redirect_to root_path
       end
     else
-      redirect_to root_path
+        redirect_to root_path
     end
   end
 
+  def require_login
+    unless logged_in?
+      flash[:error] = "You must be logged in to access this section"
+      redirect_to login_url # halts request cycle
+    end
+  end
 end

@@ -1,0 +1,20 @@
+<% if !@order_item.nil? && @order_item.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+    <% @order_item.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<% if @state == "Empty" %>
+  <div class="<%=css_module("cart","without-product") %>">
+    <p class="<%=css_module("cart","text-format") %>">
+      Você não tem produtos no carrinho. Por favor <b><%= link_to "volte a loja", products_path %></b> e adicione algo.
+    </p>
+  </div>
+<% else %>
+  <% @order_items.each do |order_item| %>
+    <%= render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true %>
+  <% end %>
+<% end %>

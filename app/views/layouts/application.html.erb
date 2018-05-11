@@ -11,8 +11,10 @@
 
   <body>
     <% if logged_in? %>
-      <% if current_user.user_type.include? "user" %>
+      <% if current_user.user_type.to_s.include?("user") %>
         <%= render "layouts/header" %>
+      <% else %>
+         <%= render "layouts/header" %>
       <% end %>
     <% else %>
       <%= render "layouts/header" %>
