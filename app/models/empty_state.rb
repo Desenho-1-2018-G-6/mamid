@@ -1,4 +1,4 @@
-class EmptyState < OrderStatus
+class EmptyState < Cart
 
     def status
         "Empty"

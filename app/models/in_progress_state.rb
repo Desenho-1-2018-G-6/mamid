@@ -1,4 +1,4 @@
-class InProgressState < OrderStatus
+class InProgressState < Cart
 
     def status
         "In Progress"

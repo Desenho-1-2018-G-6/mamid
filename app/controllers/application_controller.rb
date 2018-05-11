@@ -8,7 +8,8 @@ class ApplicationController < ActionController::Base
     unless session[:order_id].nil?
       Order.find(session[:order_id])
     else
-      Order.new
+      @order_status = OrderStatus.create
+      Order.new(order_status_id: @order_status.id)
     end
   end
 
