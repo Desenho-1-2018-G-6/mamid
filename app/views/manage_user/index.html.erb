@@ -1,0 +1,16 @@
+<div class="<%=css_module("manage_user","main-container") %>">
+    <% @users.each do |user| %>
+        <ul class="<%=css_module("manage_user","form-container") %>">
+            <li>Nome:<%= user.first_name %></li>
+            <li>Email:<%= user.email %></li>
+            <li>Tipo de usuário: <%= user.user_type %></li>
+            <li>
+                <button  class='btn btn-info'>
+            <%= link_to 'Editar permissões', edit_manage_user_path(user) %>
+                </button>
+            </li>
+        </ul>
+    <% end %>
+    <br>
+</div>
+
