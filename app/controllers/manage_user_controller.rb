@@ -5,16 +5,35 @@ class ManageUserController < ApplicationController
         @users = User.all
     end
 
-    def update
-        respond_to do |format|
-            if @user.update(user_params)
-              format.html { redirect_to @user, notice: 'User was successfully updated.' }
-              format.json { render :show, status: :ok, location: @user }
-            else
-              format.html { render :edit }
-              format.json { render json: @user.errors, status: :unprocessable_entity }
-            end
-          end
+    def update_permission
+        @user = User.find(params[:id])
+        if @user.user_type
+          @actual_type = @user.user_type
+        else
+          @actual_type = ""
+        end
+
+        if params[:action_type] == "add admin"
+          @user.update_attributes(
+            :user_type => @actual_type + " admin",
+            :email_confirmation => @user.email)
+        elsif params[:action_type] == "remove admin"
+          @actual_type.slice!("admin")
+          @user.update_attributes(
+            :user_type => @actual_type,
+            :email_confirmation => @user.email)            
+        elsif params[:action_type] == "add manager"
+          @user.update_attributes(
+            :user_type => @actual_type + " manager",
+            :email_confirmation => @user.email) 
+        elsif params[:action_type] == "remove manager"
+          @actual_type.slice!("manager")
+          @user.update_attributes(
+            :user_type => @actual_type,
+            :email_confirmation => @user.email) 
+        end
+
+        redirect_to manage_user_path
     end
 
     private
