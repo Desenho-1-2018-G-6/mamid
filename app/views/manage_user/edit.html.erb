@@ -1,0 +1,27 @@
+<div class="<%=css_module("manage_user","main-container") %>">
+
+    <div  class="<%=css_module("manage_user","form-container") %>">
+        <p>Nome:</p>
+        <p><%= @user.first_name + " " + @user.last_name%></p>
+        <br/>
+        <p>Permissões atuais:</p>
+        <p><%= @user.user_type %></p>
+        <br/>
+        <div class="<%=css_module("manage_user","button-container") %>">
+            <%if @user.user_type != nil and @user.user_type.include? "admin"%>
+                <button class="btn btn-danger">Remover permissão <br/>de Admin</button>
+            <%else%>
+                <button class="btn btn-danger">Adicionar permissão <br/>de Admin</button>
+            <%end%>
+
+            <%if @user.user_type != nil and @user.user_type.include? "manager"%>
+                <button class="btn btn-danger">Remover permissão <br/>de Gerente</button>
+            <%else%>
+                <button class="btn btn-info">Adicionar permissão <br/>de Gerente</button>
+            <%end%>
+        </div>
+    </div>
+
+
+
+</div>

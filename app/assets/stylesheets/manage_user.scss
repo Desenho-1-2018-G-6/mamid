@@ -37,4 +37,13 @@
             font-size: 1.3em;
         }
     }
+
+    .button-container {
+        display: flex;
+        width: 80%;
+        >button {
+            width: 50%;
+            margin: 5px;
+        }
+    }
 }
