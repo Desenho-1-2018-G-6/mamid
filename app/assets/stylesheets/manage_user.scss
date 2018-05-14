@@ -1,0 +1,40 @@
+:module(manage_user) {
+    .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 90vh;
+        width: 100%;
+        flex-wrap: wrap;
+        max-width: 100%;
+        padding: 20px;
+        h1 {
+            color: white;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+    }
+    .form-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #FFFFFF;
+        flex-direction: column;
+        border-radius: 10px;
+        width: 400px;
+        min-height: 150px;
+        padding: 10px 0 10px 0;
+        margin: 20px;
+        text-decoration: none;
+        list-style-type: none;
+        @media screen and (max-width: 530px) {
+            width: 90%;
+        }
+        >form {
+            width: 90%;
+        }
+        >li{
+            font-size: 1.3em;
+        }
+    }
+}

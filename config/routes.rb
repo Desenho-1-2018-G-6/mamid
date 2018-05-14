@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :admins
   resources :products
   resources :users
+  resources :manage_user
 
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
