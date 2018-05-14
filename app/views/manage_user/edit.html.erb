@@ -7,21 +7,34 @@
         <p>Permissões atuais:</p>
         <p><%= @user.user_type %></p>
         <br/>
-        <div class="<%=css_module("manage_user","button-container") %>">
-            <%if @user.user_type != nil and @user.user_type.include? "admin"%>
-                <button class="btn btn-danger">Remover permissão <br/>de Admin</button>
-            <%else%>
-                <button class="btn btn-info">Adicionar permissão <br/>de Admin</button>
-            <%end%>
-
-            <%if @user.user_type != nil and @user.user_type.include? "manager"%>
-                <button class="btn btn-danger">Remover permissão <br/>de Gerente</button>
-            <%else%>
-                <button class="btn btn-info">Adicionar permissão <br/>de Gerente</button>
-            <%end%>
-        </div>
     </div>
 
+    <div  class="<%=css_module("manage_user","form-container") %>">
+        <div class="<%=css_module("manage_user","button-container") %>">
+        <h3>Administrador</h3>
+        <%if @user.user_type != nil and @user.user_type.include? "admin"%>
+            <%= button_to "Remover permissão",
+            update_permission_manage_user_path(id: @user.id, action_type: "remove admin"),
+            class: "btn btn-danger" %>
+        
+        <%else%>
+            <%= button_to "Adicionar permissão",
+            update_permission_manage_user_path(id: @user.id, action_type: "add admin"), 
+            class: "btn btn-info" %>
+        
+        <%end%>
+        <h3>Gerente</h3>
+        <%if @user.user_type != nil and @user.user_type.include? "manager"%>
+            <%= button_to "Remover permissão",
+            update_permission_manage_user_path(id: @user.id, action_type: "remove manager"), 
+            class: "btn btn-danger" %>
+        <%else%>
+            <%= button_to "Adicionar permissão",
+            update_permission_manage_user_path(id: @user.id, action_type: "add manager"), 
+            class: "btn btn-info" %>
+        <%end%>
+    </div>
+</div>
 
 
 </div>
