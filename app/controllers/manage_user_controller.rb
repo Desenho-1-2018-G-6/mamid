@@ -1,5 +1,6 @@
 class ManageUserController < ApplicationController
     before_action :set_user, only: [:edit, :update, :destroy]
+    before_filter :authorized?
 
     def index
         @users = User.all
@@ -45,6 +46,14 @@ class ManageUserController < ApplicationController
         # Never trust parameters from the scary internet, only allow the white list through.
         def user_params
           params.permit(:first_name, :last_name, :email, :email_confirmation, :password, :password_confirmation, :cpf, :birth_date, :gender, :phone, :user_type)
+        end
+
+        def authorized?
+
+          unless current_user != nil and current_user.user_type.include? "admin"
+            flash[:error] = "Você não está autorizado a visualizar esta página."
+            redirect_to root_path
+          end
         end
 
 
