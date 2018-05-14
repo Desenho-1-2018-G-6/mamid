@@ -23,7 +23,7 @@
     <div class="<%=css_module("main","container")%>">
       <div class="<%=css_module("main","left-content")%>">
         <% if current_user != nil %>
-          <%= current_user.show_sidebar %>
+          <%= current_user.show_admin_options %>
         <% end %>
       </div>
         <div class="<%=css_module("main","right-content")%>">

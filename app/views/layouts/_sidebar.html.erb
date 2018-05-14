@@ -14,29 +14,31 @@
 
         <div class="menu-list">
             <ul id="menu-content" class="menu-content collapse out">
-                <li  data-toggle="collapse" data-target="#products" class="collapsed">
-                  <a href="#"><i class="fa fa-gift fa-lg"></i> Produtos <span class="arrow"></span></a>
-                </li>
-                <ul class="sub-menu collapse" id="products">
-                    <li><%= link_to 'Cadastrar', new_product_path %></li>
-                    <li><%= link_to 'Visualizar Produtos', products_path %></li>
-                </ul>
+              <% if current_user.user_type.include? "manager" %>
+                  <li  data-toggle="collapse" data-target="#products" class="collapsed">
+                    <a href="#"><i class="fa fa-gift fa-lg"></i> Produtos <span class="arrow"></span></a>
+                  </li>
+                  <ul class="sub-menu collapse" id="products">
+                      <li><%= link_to 'Cadastrar', new_product_path %></li>
+                      <li><%= link_to 'Visualizar Produtos', products_path %></li>
+                  </ul>
 
-                <li data-toggle="collapse" data-target="#service" class="collapsed">
-                  <a href="#"><i class="fa fa-gift fa-lg"></i> Categorias <span class="arrow"></span></a>
-                </li>
-                <ul class="sub-menu collapse" id="service">
-                  <li>Cadastrar</li>
-                  <li>Visualizar Categorias</li>
-                </ul>
-
-                <li data-toggle="collapse" data-target="#new" class="collapsed">
-                  <a href="#"><i class="fa fa-users fa-lg"></i> Usuários <span class="arrow"></span></a>
-                </li>
-                <ul class="sub-menu collapse" id="new">
-                  <li>Gerenciar</li>
-                </ul>
-
+                  <li data-toggle="collapse" data-target="#service" class="collapsed">
+                    <a href="#"><i class="fa fa-gift fa-lg"></i> Categorias <span class="arrow"></span></a>
+                  </li>
+                  <ul class="sub-menu collapse" id="service">
+                    <li>Cadastrar</li>
+                    <li>Visualizar Categorias</li>
+                  </ul>
+              <%end%>
+              <% if current_user.user_type.include? "admin" %>
+                  <li data-toggle="collapse" data-target="#new" class="collapsed">
+                    <a href="#"><i class="fa fa-users fa-lg"></i> Usuários <span class="arrow"></span></a>
+                  </li>
+                  <ul class="sub-menu collapse" id="new">
+                    <li><%= link_to 'Gerenciar usuários', users_path %></li>
+                  </ul>
+              <%end%>
                <li>
                    <a href="/logout/">
                      <i class="fa fa-user fa-lg"></i> Sair
