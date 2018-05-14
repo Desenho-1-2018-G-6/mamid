@@ -11,7 +11,7 @@
             <%if @user.user_type != nil and @user.user_type.include? "admin"%>
                 <button class="btn btn-danger">Remover permissão <br/>de Admin</button>
             <%else%>
-                <button class="btn btn-danger">Adicionar permissão <br/>de Admin</button>
+                <button class="btn btn-info">Adicionar permissão <br/>de Admin</button>
             <%end%>
 
             <%if @user.user_type != nil and @user.user_type.include? "manager"%>

@@ -1,10 +1,9 @@
 class ManageUserController < ApplicationController
-    before_action :set_user, only: [:show, :edit, :update, :destroy]
+    before_action :set_user, only: [:edit, :update, :destroy]
 
     def index
         @users = User.all
     end
-
 
     def update
         respond_to do |format|

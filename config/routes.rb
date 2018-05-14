@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :admins
   resources :products
   resources :users
+  
+  get 'manage_user/index', as: :manage_user
   resources :manage_user
 
   resource :cart, only: [:show]
