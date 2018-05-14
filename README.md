@@ -4,7 +4,7 @@
 
 # Começando (desenvolvimento)
 
-&emsp;&emsp; Utilizamos o Docker como plataforma de desenvolvimento com o intuito de garantir o mesmo ambiente de desenvolvimento independentemente do Sistema Operacional(SO) utilizado. Informaçoes mais detalhadas sobre a utilização do docker clique [aqui](doc/Guia_utilizacao_docker.md)
+&emsp;&emsp; Utilizamos o Docker como plataforma de desenvolvimento com o intuito de garantir o mesmo ambiente de desenvolvimento independentemente do Sistema Operacional(SO) utilizado. Informaçoes mais detalhadas sobre a utilização do docker clique [aqui](https://github.com/Desenho-1-2018-G-6/docs/blob/master/docs/Guia_utilizacao_docker.md)
 
 &emsp;&emsp; 1. Para começar criando um ambiente de desenvolvimento com que possa trabalhar no Mamid, basta executar o comando a seguir:
 
