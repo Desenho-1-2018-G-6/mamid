@@ -3,23 +3,31 @@
         display: flex;
         width: 100%;
         height: 100%;
-        background-image: url("main-bg.jpg");
+        background-image: url("background.jpg");
     }
-    .left-content {
-
-    }
+    .left-content {}
     .right-content {
         width: 100%;
     }
     .sidebar {
+        @media (max-width: 767px) {
+            display: none;
+        }
         position: inherit;
         min-height: 100vh;
+        min-width: 170px;
         height: 100%;
-        >i {
-            @media (max-width: 767px) {
-                top: 15px !important;
-                left: 100px;
-            }
-        }
+    }
+}
+
+.hamburger {
+    display: none !important;
+    @media (max-width: 767px) {
+        display: inline-block !important;
+        position: absolute;
+        color: white !important;
+        background-color: transparent !important;
+        left: 20px;
+        top: 20px;
     }
 }
