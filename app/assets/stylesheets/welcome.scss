@@ -6,7 +6,6 @@
         flex-direction: column;
         .products-container {
             margin: 20px;
-            background-color: white;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
@@ -15,10 +14,13 @@
     .card {
         display: flex;
         flex-direction: column;
+        background-color: white;
+        padding: 20px;
         margin: 20px;
         text-align: center;
         font-weight: bold;
-        width: 150px;
+        min-width: 200px;
+        border-radius: 5px;
 
         .card-image {
             width: 150px;

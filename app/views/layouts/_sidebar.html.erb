@@ -4,8 +4,9 @@
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-<div class="nav-side-menu <%=css_module("main","sidebar")%>">
-    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+<i class="fa fa-bars fa-2x toggle-btn hamburger" data-toggle="collapse" data-target="#menu-main, #menu-content"></i>
+
+<div id="menu-main" class="nav-side-menu <%=css_module("main","sidebar")%>">
         <div class="div-image-logo">
           <%= link_to root_path do %>
               <%= image_tag('logo.png', class: "image-logo") %>

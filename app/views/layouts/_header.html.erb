@@ -1,11 +1,15 @@
+<% if current_user != nil and current_user.user_type.include? "admin"%>
+<div class="<%= css_module("header","main-container")%> no-display" >
+<% else %>
 <div class="<%= css_module("header","main-container")%>" >
+<% end %>    
     <div class="<%= css_module("header", "left-content") %>">
         <%= link_to root_path do %>
             <%= image_tag('logo.png', class: css_module("header","logo")) %>
         <% end %>
         </div>
 
-        <div>
+        <div class="header-search">
             <%= form_tag(products_path, method: :get) do %>
                 <%= text_field_tag :term, params[:term]  %>
                 <%= submit_tag 'Pesquisar', name: nil %>
@@ -36,7 +40,7 @@
             <% else %>
                 <%= link_to 'Login', login_path %>
                 <%= link_to 'Cadastro', new_user_path %>
-                <%= link_to 'Carrinho', root_path %>
+                <%= link_to 'Carrinho', cart_path %>
             <% end %>
           </div>
         </div>
